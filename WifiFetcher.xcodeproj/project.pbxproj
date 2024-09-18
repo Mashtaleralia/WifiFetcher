@@ -60,6 +60,7 @@
 		840C4AFE2C9B34F700A5F5F9 /* WifiFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				840C4B1E2C9B664700A5F5F9 /* ViewModel */,
 				840C4B172C9B3C2200A5F5F9 /* ViewController */,
 				840C4B162C9B394200A5F5F9 /* View */,
 				840C4B152C9B393600A5F5F9 /* Model */,
@@ -111,6 +112,13 @@
 				840C4B032C9B34F700A5F5F9 /* FetcherViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		840C4B1E2C9B664700A5F5F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
