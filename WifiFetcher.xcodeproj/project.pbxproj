@@ -54,14 +54,54 @@
 		840C4AFE2C9B34F700A5F5F9 /* WifiFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				840C4AFF2C9B34F700A5F5F9 /* AppDelegate.swift */,
-				840C4B012C9B34F700A5F5F9 /* SceneDelegate.swift */,
-				840C4B032C9B34F700A5F5F9 /* FetcherViewController.swift */,
-				840C4B082C9B34F800A5F5F9 /* Assets.xcassets */,
-				840C4B0A2C9B34F800A5F5F9 /* LaunchScreen.storyboard */,
+				840C4B172C9B3C2200A5F5F9 /* ViewController */,
+				840C4B162C9B394200A5F5F9 /* View */,
+				840C4B152C9B393600A5F5F9 /* Model */,
+				840C4B142C9B391C00A5F5F9 /* Resources */,
+				840C4B132C9B391200A5F5F9 /* Service */,
 				840C4B0D2C9B34F800A5F5F9 /* Info.plist */,
 			);
 			path = WifiFetcher;
+			sourceTree = "<group>";
+		};
+		840C4B132C9B391200A5F5F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		840C4B142C9B391C00A5F5F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				840C4AFF2C9B34F700A5F5F9 /* AppDelegate.swift */,
+				840C4B012C9B34F700A5F5F9 /* SceneDelegate.swift */,
+				840C4B082C9B34F800A5F5F9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		840C4B152C9B393600A5F5F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		840C4B162C9B394200A5F5F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				840C4B0A2C9B34F800A5F5F9 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		840C4B172C9B3C2200A5F5F9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				840C4B032C9B34F700A5F5F9 /* FetcherViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
