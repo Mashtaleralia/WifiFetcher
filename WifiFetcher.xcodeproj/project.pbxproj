@@ -15,6 +15,7 @@
 		840C4B192C9B3DE500A5F5F9 /* ShowResultsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B182C9B3DE500A5F5F9 /* ShowResultsPanelView.swift */; };
 		840C4B1B2C9B3E0900A5F5F9 /* ShowResultsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B1A2C9B3E0900A5F5F9 /* ShowResultsButton.swift */; };
 		840C4B1D2C9B422B00A5F5F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B1C2C9B422B00A5F5F9 /* Colors.swift */; };
+		840C4B242C9C16B500A5F5F9 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B232C9C16B500A5F5F9 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		840C4B182C9B3DE500A5F5F9 /* ShowResultsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsPanelView.swift; sourceTree = "<group>"; };
 		840C4B1A2C9B3E0900A5F5F9 /* ShowResultsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsButton.swift; sourceTree = "<group>"; };
 		840C4B1C2C9B422B00A5F5F9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		840C4B232C9C16B500A5F5F9 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		840C4B152C9B393600A5F5F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				840C4B232C9C16B500A5F5F9 /* ToDo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840C4B242C9C16B500A5F5F9 /* ToDo.swift in Sources */,
 				840C4B042C9B34F700A5F5F9 /* FetcherViewController.swift in Sources */,
 				840C4B1D2C9B422B00A5F5F9 /* Colors.swift in Sources */,
 				840C4B1B2C9B3E0900A5F5F9 /* ShowResultsButton.swift in Sources */,
