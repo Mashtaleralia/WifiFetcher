@@ -29,12 +29,17 @@ class ShowResultsPanelView: UIView {
     init(viewModel: ShowResultsPanelViewViewModel, frame: CGRect) {
         self.viewModel = viewModel
         super.init(frame: frame)
+        resultsButton.addTarget(self, action: #selector(didTapShowResults), for: .touchUpInside)
         setUp()
         toggleSwitch.addTarget(self, action: #selector(didToggle(_:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didTapShowResults() {
+        
     }
     
     @objc private func didToggle(_ sender: UISwitch) {
