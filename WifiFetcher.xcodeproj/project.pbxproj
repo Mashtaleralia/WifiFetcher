@@ -19,6 +19,7 @@
 		840C4B222C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B212C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift */; };
 		840C4B242C9C16B500A5F5F9 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B232C9C16B500A5F5F9 /* ToDo.swift */; };
 		840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B252C9C18C300A5F5F9 /* APICaller.swift */; };
+		840C4B282C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		840C4B212C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingStatusViewViewModel.swift; sourceTree = "<group>"; };
 		840C4B232C9C16B500A5F5F9 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		840C4B252C9C18C300A5F5F9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherViewControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				840C4B0A2C9B34F800A5F5F9 /* LaunchScreen.storyboard */,
 				840C4B182C9B3DE500A5F5F9 /* ShowResultsPanelView.swift */,
 				840C4B1A2C9B3E0900A5F5F9 /* ShowResultsButton.swift */,
+				840C4B1F2C9B669D00A5F5F9 /* FetchingSatusView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +130,8 @@
 		840C4B1E2C9B664700A5F5F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				840C4B212C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift */,
+				840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840C4B242C9C16B500A5F5F9 /* ToDo.swift in Sources */,
+				840C4B282C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift in Sources */,
 				840C4B042C9B34F700A5F5F9 /* FetcherViewController.swift in Sources */,
 				840C4B1D2C9B422B00A5F5F9 /* Colors.swift in Sources */,
 				840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */,
