@@ -7,9 +7,15 @@
 
 import UIKit
 
+class ShowResultsPanelViewViewModel {
+    var isToggled: Bool = false
+}
+
 class ShowResultsPanelView: UIView {
     
     let resultsButton = ShowResultsButton()
+    
+    var viewModel = ShowResultsPanelViewViewModel()
     
     let toggleSwitch: UISwitch = {
         let toggle = UISwitch()
@@ -20,13 +26,19 @@ class ShowResultsPanelView: UIView {
         return toggle
     }()
 
-    override init(frame: CGRect) {
+    init(viewModel: ShowResultsPanelViewViewModel, frame: CGRect) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         setUp()
+        toggleSwitch.addTarget(self, action: #selector(didToggle(_:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didToggle(_ sender: UISwitch) {
+        viewModel.isToggled = sender.isOn
     }
     
     private func setUp() {
