@@ -9,15 +9,17 @@ import UIKit
 
 class FetcherViewController: UIViewController {
     
-    private let showResultsPanel = ShowResultsPanelView()
+    private lazy var showResultsPanel = ShowResultsPanelView(viewModel: viewModel.resultsPanelViewModel, frame: .zero)
+    
+    private lazy var fetchingStatusView = FetchingSatusView(viewModel: viewModel.fetchingStatusViewModel, frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         view.addSubview(showResultsPanel)
+        view.addSubview(vanillaButton)
+        view.addSubview(fetchingStatusView)
         addConstraints()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.showResultsPanel.resultsButton.isEnabled = true
         }
     }
     
@@ -28,6 +30,10 @@ class FetcherViewController: UIViewController {
             showResultsPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             showResultsPanel.heightAnchor.constraint(equalToConstant: 68)
             
+            fetchingStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            fetchingStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            fetchingStatusView.heightAnchor.constraint(equalToConstant: 68),
+            fetchingStatusView.bottomAnchor.constraint(equalTo: showResultsPanel.topAnchor, constant: -25)
         ])
         
         
