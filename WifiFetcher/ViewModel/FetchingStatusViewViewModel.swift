@@ -28,6 +28,9 @@ class FetchingStatusViewViewModel {
         }
     }
     
+    public let changeStatusTitle = "Tap on the todo to change status"
+    public let changeStatusImage = UIImage(named: "tap")
+    
     weak var delegate: FetchingStatusViewViewModelDelegate?
     
     public var title: String {
