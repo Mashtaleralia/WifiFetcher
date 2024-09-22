@@ -69,6 +69,10 @@ class FetchingSatusView: UIView {
         ])
     }
     
+    public func setUpTodoHint() {
+        titleLabel.text = viewModel.changeStatusTitle
+        thumbImageView.image = viewModel.changeStatusImage
+    }
    
     
 }
