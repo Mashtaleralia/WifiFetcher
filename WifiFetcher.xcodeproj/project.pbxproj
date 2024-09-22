@@ -21,6 +21,8 @@
 		840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B252C9C18C300A5F5F9 /* APICaller.swift */; };
 		840C4B282C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */; };
 		840C4B2A2C9DDF8700A5F5F9 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B292C9DDF8700A5F5F9 /* TodosViewController.swift */; };
+		840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */; };
+		840C4B322C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		840C4B252C9C18C300A5F5F9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherViewControllerViewModel.swift; sourceTree = "<group>"; };
 		840C4B292C9DDF8700A5F5F9 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
+		840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCell.swift; sourceTree = "<group>"; };
+		840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		840C4B2D2C9DFA6400A5F5F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		840C4B302C9E097B00A5F5F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,9 +234,12 @@
 				840C4B042C9B34F700A5F5F9 /* FetcherViewController.swift in Sources */,
 				840C4B1D2C9B422B00A5F5F9 /* Colors.swift in Sources */,
 				840C4B2A2C9DDF8700A5F5F9 /* TodosViewController.swift in Sources */,
+				840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */,
 				840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */,
 				840C4B1B2C9B3E0900A5F5F9 /* ShowResultsButton.swift in Sources */,
 				840C4B002C9B34F700A5F5F9 /* AppDelegate.swift in Sources */,
+				840C4B322C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift in Sources */,
+				840C4B2C2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift in Sources */,
 				840C4B202C9B669D00A5F5F9 /* FetchingSatusView.swift in Sources */,
 				840C4B222C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift in Sources */,
 				840C4B022C9B34F700A5F5F9 /* SceneDelegate.swift in Sources */,
