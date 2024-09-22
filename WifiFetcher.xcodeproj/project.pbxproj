@@ -24,6 +24,7 @@
 		840C4B2C2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */; };
 		840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */; };
 		840C4B322C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */; };
+		840C4B342CA0109600A5F5F9 /* FetchWifiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B332CA0109600A5F5F9 /* FetchWifiButton.swift */; };
 		840C4B3C2CA06CE000A5F5F9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 840C4B3B2CA06CE000A5F5F9 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewControllerViewModel.swift; sourceTree = "<group>"; };
 		840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCell.swift; sourceTree = "<group>"; };
 		840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		840C4B332CA0109600A5F5F9 /* FetchWifiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWifiButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +123,12 @@
 		840C4B162C9B394200A5F5F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				840C4B2D2C9DFA6400A5F5F9 /* Cell */,
 				840C4B0A2C9B34F800A5F5F9 /* LaunchScreen.storyboard */,
 				840C4B182C9B3DE500A5F5F9 /* ShowResultsPanelView.swift */,
 				840C4B1A2C9B3E0900A5F5F9 /* ShowResultsButton.swift */,
 				840C4B1F2C9B669D00A5F5F9 /* FetchingSatusView.swift */,
+				840C4B332CA0109600A5F5F9 /* FetchWifiButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 				840C4B042C9B34F700A5F5F9 /* FetcherViewController.swift in Sources */,
 				840C4B1D2C9B422B00A5F5F9 /* Colors.swift in Sources */,
 				840C4B2A2C9DDF8700A5F5F9 /* TodosViewController.swift in Sources */,
+				840C4B342CA0109600A5F5F9 /* FetchWifiButton.swift in Sources */,
 				840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */,
 				840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */,
 				840C4B1B2C9B3E0900A5F5F9 /* ShowResultsButton.swift in Sources */,
