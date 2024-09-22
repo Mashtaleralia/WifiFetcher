@@ -21,6 +21,7 @@
 		840C4B262C9C18C300A5F5F9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B252C9C18C300A5F5F9 /* APICaller.swift */; };
 		840C4B282C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */; };
 		840C4B2A2C9DDF8700A5F5F9 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B292C9DDF8700A5F5F9 /* TodosViewController.swift */; };
+		840C4B2C2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */; };
 		840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */; };
 		840C4B322C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		840C4B252C9C18C300A5F5F9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherViewControllerViewModel.swift; sourceTree = "<group>"; };
 		840C4B292C9DDF8700A5F5F9 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
+		840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewControllerViewModel.swift; sourceTree = "<group>"; };
 		840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCell.swift; sourceTree = "<group>"; };
 		840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,8 +139,10 @@
 		840C4B1E2C9B664700A5F5F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				840C4B302C9E097B00A5F5F9 /* Cell */,
 				840C4B212C9B673A00A5F5F9 /* FetchingStatusViewViewModel.swift */,
 				840C4B272C9C7EEC00A5F5F9 /* FetcherViewControllerViewModel.swift */,
+				840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
