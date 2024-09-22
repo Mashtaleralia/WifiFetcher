@@ -15,7 +15,11 @@ protocol ShowResultsPanelViewDelegate: AnyObject {
     func showResults()
 }
 
-final class ShowResultsPanelView: UIView {
+protocol ShowResultsPanelViewRevertDelegate: AnyObject {
+    func revert()
+}
+
+final class ShowResultsPanelView: UIView, ShowResultsPanelViewRevertDelegate {
     
     let resultsButton = ShowResultsButton()
     
@@ -38,6 +42,10 @@ final class ShowResultsPanelView: UIView {
         resultsButton.addTarget(self, action: #selector(didTapShowResults), for: .touchUpInside)
         setUp()
         toggleSwitch.addTarget(self, action: #selector(didToggle(_:)), for: .valueChanged)
+    }
+    
+    func revert() {
+        resultsButton.isEnabled = false
     }
     
     required init?(coder: NSCoder) {

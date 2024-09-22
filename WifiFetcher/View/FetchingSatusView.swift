@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class FetchingSatusView: UIView {
+protocol FetchingSatusViewDelegate: AnyObject {
+    func revertToInitial()
+}
+
+final class FetchingSatusView: UIView, FetchingSatusViewDelegate {
     
     private let thumbImageView: UIImageView = {
         let imageView = UIImageView()
@@ -43,6 +47,10 @@ final class FetchingSatusView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func revertToInitial() {
+        viewModel.state = .initial
     }
     
     private func setUp() {

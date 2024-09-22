@@ -9,6 +9,10 @@ import UIKit
 
 final class TodosViewController: UIViewController {
     
+    weak var delegate: FetchWifiButtonDelegate?
+    weak var showResultsDelegate: ShowResultsPanelViewRevertDelegate?
+    weak var fetchingSatusViewDelegate: FetchingSatusViewDelegate?
+    
     private let doneButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +33,6 @@ final class TodosViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        //tableView.tintColor = .black
         return tableView
     }()
     
@@ -45,9 +48,11 @@ final class TodosViewController: UIViewController {
         view.backgroundColor = .black
         view.addSubview(tableView)
         view.addSubview(statusView)
+        view.addSubview(doneButton)
         addConstraints()
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        doneButton.addTarget(self, action: #selector(didTapDone), for: .touchUpInside)
     }
     
     init(viewModel: TodosViewControllerViewModel) {
@@ -57,6 +62,15 @@ final class TodosViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapDone() {
+        navigationController?.popViewController(animated: true)
+        
+        delegate?.revertButtonState()
+        showResultsDelegate?.revert()
+        fetchingSatusViewDelegate?.revertToInitial()
+        
     }
     
     private func addConstraints() {

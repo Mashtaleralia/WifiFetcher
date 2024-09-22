@@ -74,6 +74,9 @@ extension FetcherViewController: ShowResultsPanelViewDelegate {
         let toDoVM = TodosViewControllerViewModel(todos: viewModel.todos)
         
         let vc = TodosViewController(viewModel: toDoVM)
+        vc.delegate = button as? any FetchWifiButtonDelegate & FetchingSatusViewDelegate & ShowResultsPanelViewRevertDelegate
+        vc.fetchingSatusViewDelegate = fetchingStatusView
+        vc.showResultsDelegate = showResultsPanel
         
         navigationController?.pushViewController(vc, animated: true)
     }

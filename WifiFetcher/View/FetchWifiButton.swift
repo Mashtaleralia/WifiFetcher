@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol FetchWifiButtonDelegate: AnyObject {
+    func revertButtonState()
+}
+
 final class FetchWifiButton: UIView {
     
     var backgroundDimension: CGFloat = 320
@@ -78,18 +82,27 @@ final class FetchWifiButton: UIView {
     
     
     
-    func setUp() {
-        
+    private func setAppearance() {
         backgroundCircle.layer.cornerRadius = backgroundCornerRadius
         tertiaryCircle.layer.cornerRadius = tertiaryCornerRadius
         secondaryCircle.layer.cornerRadius = 105
         primaryCircle.layer.cornerRadius = 80
+        
+        backgroundCircle.backgroundColor = Colors.backgroundGreyButton
+        tertiaryCircle.backgroundColor = Colors.tertiaryGreyButton
+        secondaryCircle.backgroundColor = Colors.secondaryGreyButton
+        primaryCircle.backgroundColor = Colors.primaryGreyButton
         
         addSubview(backgroundCircle)
         backgroundCircle.addSubview(tertiaryCircle)
         tertiaryCircle.addSubview(secondaryCircle)
         secondaryCircle.addSubview(primaryCircle)
         primaryCircle.addSubview(wifiImageView)
+    }
+    
+    func setUp() {
+        
+        setAppearance()
         
         setupConstraints()
     }
@@ -120,6 +133,38 @@ final class FetchWifiButton: UIView {
             make.center.equalTo(primaryCircle)
             make.height.width.equalTo(100)
         }
+    }
+    
+    private func remakeConstraints() {
+        primaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(primaryDimension)
+            make.center.equalTo(secondaryCircle)
+        }
+        self.primaryCircle.layoutIfNeeded()
+        
+        secondaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(secondaryDimension)
+            make.center.equalTo(tertiaryCircle)
+        }
+        self.secondaryCircle.layoutIfNeeded()
+        
+        tertiaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(tertiaryDimension)
+            make.center.equalTo(backgroundCircle)
+        }
+        self.tertiaryCircle.layoutIfNeeded()
+        
+        backgroundCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(backgroundDimension)
+            make.center.equalToSuperview()
+        }
+        self.backgroundCircle.layoutIfNeeded()
+        
+        wifiImageView.snp.remakeConstraints { make in
+            make.center.equalTo(primaryCircle)
+            make.height.width.equalTo(100)
+        }
+        self.wifiImageView.layoutIfNeeded()
     }
     
     var loaded = false
@@ -220,6 +265,13 @@ final class FetchWifiButton: UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7/2, execute: {
         self.animateButton()
         })
+    }
+}
+
+extension FetchWifiButton: FetchWifiButtonDelegate {
+    func revertButtonState() {
+        setAppearance()
+        remakeConstraints()
     }
 }
 
