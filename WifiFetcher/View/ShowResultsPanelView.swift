@@ -11,11 +11,17 @@ class ShowResultsPanelViewViewModel {
     var isToggled: Bool = false
 }
 
+protocol ShowResultsPanelViewDelegate: AnyObject {
+    func showResults()
+}
+
 class ShowResultsPanelView: UIView {
     
     let resultsButton = ShowResultsButton()
     
     var viewModel = ShowResultsPanelViewViewModel()
+    
+    weak var delegate: ShowResultsPanelViewDelegate?
     
     let toggleSwitch: UISwitch = {
         let toggle = UISwitch()
@@ -39,7 +45,7 @@ class ShowResultsPanelView: UIView {
     }
     
     @objc private func didTapShowResults() {
-        
+        delegate?.showResults()
     }
     
     @objc private func didToggle(_ sender: UISwitch) {
