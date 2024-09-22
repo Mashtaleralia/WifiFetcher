@@ -81,6 +81,20 @@ extension TodosViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.sections.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .black
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.textColor = .secondaryLabel
+        title.font = .systemFont(ofSize: 17, weight: .semibold)
+        title.text = viewModel.sections[section].rawValue
+        view.addSubview(title)
+        title.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        title.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17).isActive = true
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 56
     }
