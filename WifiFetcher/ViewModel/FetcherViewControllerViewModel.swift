@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol FetcherViewControllerViewModelProtocol: AnyObject {
+    func dataDidFetch()
+}
+
 class FetcherViewControllerViewModel {
+    
+    weak var delegate: FetcherViewControllerViewModelProtocol?
     
     var fetchingStatusViewModel = FetchingStatusViewViewModel()
     
@@ -21,7 +27,7 @@ class FetcherViewControllerViewModel {
         }
     }
     
-    public func fetchData(completion: @escaping ([ToDo]) -> Void) {
+    func fetchData() {
         state = .fetching
         if resultsPanelViewModel.isToggled {
             APICaller.shared.fetchFifthIdToDo { [weak self] result in
@@ -29,8 +35,8 @@ class FetcherViewControllerViewModel {
                 case .success(let todos):
                     self?.state = .completed
                     self?.todos = todos
-                    completion(todos)
                     //print(todos)
+                    self?.delegate?.dataDidFetch()
                 case .failure(let error):
                     print(error)
                 }
@@ -41,7 +47,7 @@ class FetcherViewControllerViewModel {
                 case .success(let todos):
                     self?.state = .completed
                     self?.todos = todos
-                    completion(todos)
+                    self?.delegate?.dataDidFetch()
                     //print(todos)
                 case .failure(let error):
                     print(error)

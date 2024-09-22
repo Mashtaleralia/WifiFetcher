@@ -7,14 +7,14 @@
 
 import UIKit
 
-class FetcherViewController: UIViewController {
+class FetcherViewController: UIViewController, FetcherViewControllerViewModelProtocol {
+    
     
     private lazy var showResultsPanel = ShowResultsPanelView(viewModel: viewModel.resultsPanelViewModel, frame: .zero)
     
     private lazy var fetchingStatusView = FetchingSatusView(viewModel: viewModel.fetchingStatusViewModel, frame: .zero)
     
     let viewModel = FetcherViewControllerViewModel()
-
     
     let button = FetchWifiButton()
 
@@ -31,28 +31,20 @@ class FetcherViewController: UIViewController {
         view.addSubview(button)
         addConstraints()
         
+        viewModel.delegate = self
         showResultsPanel.delegate = self
 
     }
     
     func didTapButton() {
-        
-        viewModel.fetchData { todos in
-            DispatchQueue.main.async {
-                self.button.loaded = true
-                self.showResultsPanel.resultsButton.isEnabled = true
-            }
+        viewModel.fetchData()
+    }
+    
+    func dataDidFetch() {
+        DispatchQueue.main.async {
+            self.button.loaded = true
+            self.showResultsPanel.resultsButton.isEnabled = true
         }
-//        
-//        APICaller.shared.fetchToDos { result in
-//            switch result {
-//            case .success(let result):
-//                print(result)
-//              
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
     
     private func addConstraints() {
@@ -61,10 +53,6 @@ class FetcherViewController: UIViewController {
             showResultsPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             showResultsPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             showResultsPanel.heightAnchor.constraint(equalToConstant: 68),
-//            vanillaButton.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-//            vanillaButton.centerYAnchor.constraint(equalTo: button.centerYAnchor),
-//            vanillaButton.heightAnchor.constraint(equalToConstant: 80),
-//            vanillaButton.widthAnchor.constraint(equalToConstant: 80),
             
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
