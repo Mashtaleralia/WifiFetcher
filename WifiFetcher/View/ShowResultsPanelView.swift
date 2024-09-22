@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShowResultsPanelViewViewModel {
+final class ShowResultsPanelViewViewModel {
     var isToggled: Bool = false
 }
 
@@ -15,7 +15,7 @@ protocol ShowResultsPanelViewDelegate: AnyObject {
     func showResults()
 }
 
-class ShowResultsPanelView: UIView {
+final class ShowResultsPanelView: UIView {
     
     let resultsButton = ShowResultsButton()
     
@@ -23,7 +23,7 @@ class ShowResultsPanelView: UIView {
     
     weak var delegate: ShowResultsPanelViewDelegate?
     
-    let toggleSwitch: UISwitch = {
+    private let toggleSwitch: UISwitch = {
         let toggle = UISwitch()
         toggle.offImage = UIImage(systemName: "person.slash.fill")
         toggle.onImage = UIImage(systemName: "person.fill")

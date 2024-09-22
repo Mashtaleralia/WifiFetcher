@@ -12,7 +12,7 @@ enum Section: String {
     case notCompleted = "Not completed"
 }
 
-class TodosViewControllerViewModel {
+final class TodosViewControllerViewModel {
     var sections: [Section] = [.completed, .notCompleted]
     
     var todos: [ToDo]
@@ -33,15 +33,7 @@ class TodosViewControllerViewModel {
         //print(completedToDoViewModels.count)
     }
     
-    public var completedToDoViewModels: [TodosTableViewCellViewModel]
+    var completedToDoViewModels: [TodosTableViewCellViewModel]
     
-//    private func setUpcompletedToDoViewModels() -> [TodosTableViewCellViewModel] {
-//        return todos.filter { $0.completed }.compactMap { return TodosTableViewCellViewModel(title: $0.title, isCompleted: $0.completed) }
-//    }
-//    
-//    private func setUpUncompletedToDoViewModels() -> [TodosTableViewCellViewModel] {
-//        return todos.filter { !$0.completed }.compactMap { return TodosTableViewCellViewModel(title: $0.title, isCompleted: $0.completed) }
-//    }
-    
-    public var notCompletedToDoViewModels: [TodosTableViewCellViewModel]
+    var notCompletedToDoViewModels: [TodosTableViewCellViewModel]
 }

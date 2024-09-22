@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FetchWifiButton: UIView {
+final class FetchWifiButton: UIView {
     
     var backgroundDimension: CGFloat = 320
     var tertiaryDimension: CGFloat = 260
@@ -16,8 +16,6 @@ class FetchWifiButton: UIView {
     var primaryDimension: CGFloat = 160
     lazy var backgroundCornerRadius: CGFloat = backgroundDimension/2
     lazy var tertiaryCornerRadius = backgroundCornerRadius - 60/2
-    //lazy var secondaryCornerRadius = 105//tertiaryCornerRadius - 50/2
-    //lazy var primaryCornerRadius = 100
     
     private let wifiImageView: UIImageView = {
         let imageView = UIImageView()

@@ -11,7 +11,7 @@ protocol FetcherViewControllerViewModelProtocol: AnyObject {
     func dataDidFetch()
 }
 
-class FetcherViewControllerViewModel {
+final class FetcherViewControllerViewModel {
     
     weak var delegate: FetcherViewControllerViewModelProtocol?
     

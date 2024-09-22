@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShowResultsButton: UIButton {
+final class ShowResultsButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
@@ -19,7 +19,6 @@ class ShowResultsButton: UIButton {
         super.init(frame: frame)
         isEnabled = false
         setUpButton()
-        //translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {

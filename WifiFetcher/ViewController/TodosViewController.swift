@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodosViewController: UIViewController {
+final class TodosViewController: UIViewController {
     
     private lazy var statusView: FetchingSatusView = {
         let viewModel = FetchingStatusViewViewModel()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodosTableViewCell: UITableViewCell {
+final class TodosTableViewCell: UITableViewCell {
     
     static let identifier = "TodosTableViewCell"
     var viewModel: TodosTableViewCellViewModel?
@@ -91,8 +91,6 @@ class TodosTableViewCell: UITableViewCell {
         super.prepareForReuse()
         titleLabel.text = nil
         thumbImageView.image = nil
-//        completedMark.image = nil
-//        uncompletedMark.image = nil
     }
     
 }

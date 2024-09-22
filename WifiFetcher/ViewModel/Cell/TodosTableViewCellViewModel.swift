@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TodosTableViewCellViewModel {
+final class TodosTableViewCellViewModel {
     
-    public var thumbImage: UIImage? {
+    var thumbImage: UIImage? {
         switch isCompleted {
         case true:
             return UIImage(named: "completed")
@@ -18,8 +18,8 @@ class TodosTableViewCellViewModel {
         }
     }
     
-    public var title: String
-    public var isCompleted: Bool
+    var title: String
+    var isCompleted: Bool
     
     init(title: String, isCompleted: Bool) {
         self.title = title

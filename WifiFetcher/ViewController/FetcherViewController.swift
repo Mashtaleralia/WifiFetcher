@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FetcherViewController: UIViewController, FetcherViewControllerViewModelProtocol {
+final class FetcherViewController: UIViewController, FetcherViewControllerViewModelProtocol {
     
     
     private lazy var showResultsPanel = ShowResultsPanelView(viewModel: viewModel.resultsPanelViewModel, frame: .zero)

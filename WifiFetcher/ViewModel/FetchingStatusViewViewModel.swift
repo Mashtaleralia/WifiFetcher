@@ -17,7 +17,7 @@ protocol FetchingStatusViewViewModelDelegate: AnyObject {
     func updateStatusView()
 }
 
-class FetchingStatusViewViewModel {
+final class FetchingStatusViewViewModel {
     private var initialTitle = "Tap on the button to fetch todos"
     private var fetchingTitle = "It’ll take a couple of seconds"
     private var fetchCompletedTitle = "The fetch successfully completed"
@@ -28,12 +28,12 @@ class FetchingStatusViewViewModel {
         }
     }
     
-    public let changeStatusTitle = "Tap on the todo to change status"
-    public let changeStatusImage = UIImage(named: "tap")
+    let changeStatusTitle = "Tap on the todo to change status"
+    let changeStatusImage = UIImage(named: "tap")
     
     weak var delegate: FetchingStatusViewViewModelDelegate?
     
-    public var title: String {
+    var title: String {
         switch state {
         case .initial:
             return initialTitle
@@ -44,7 +44,7 @@ class FetchingStatusViewViewModel {
         }
     }
     
-    public var thumbImage: UIImage? {
+    var thumbImage: UIImage? {
         switch state {
         case .initial:
             return UIImage(named: "tap")

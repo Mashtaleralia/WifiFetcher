@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FetchingSatusView: UIView {
+final class FetchingSatusView: UIView {
     
     private let thumbImageView: UIImageView = {
         let imageView = UIImageView()
@@ -69,7 +69,7 @@ class FetchingSatusView: UIView {
         ])
     }
     
-    public func setUpTodoHint() {
+    func setUpTodoHint() {
         titleLabel.text = viewModel.changeStatusTitle
         thumbImageView.image = viewModel.changeStatusImage
     }
