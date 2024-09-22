@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let vc = FetcherViewController()
-        window.rootViewController = vc
+        window.rootViewController = UINavigationController(rootViewController: vc)
         self.window = window
         window.makeKeyAndVisible()
     }
