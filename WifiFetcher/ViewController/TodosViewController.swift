@@ -20,7 +20,7 @@ class TodosViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+        //tableView.tintColor = .black
         return tableView
     }()
     
@@ -37,6 +37,8 @@ class TodosViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(statusView)
         addConstraints()
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     init(viewModel: TodosViewControllerViewModel) {
