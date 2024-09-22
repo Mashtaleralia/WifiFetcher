@@ -69,7 +69,7 @@ class FetchWifiButton: UIView {
     
     @objc func didTapButton() {
         action?()
-        animateButton()
+        startInfiniteAnimation()
     }
     
     var action: (()->())?
@@ -124,7 +124,15 @@ class FetchWifiButton: UIView {
         }
     }
     
-    func animateButton() {
+    var loaded = false
+    
+    func startInfiniteAnimation() {
+        animateButton { [weak self] in
+            self?.animateShrinkButton()
+        }
+    }
+    
+    func animateButton(completion: (()->())? = nil) {
         //1
         self.primaryCircle.snp.remakeConstraints { make in
             make.width.height.equalTo(180)
@@ -162,14 +170,59 @@ class FetchWifiButton: UIView {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6/2, execute: {
             self.tertiaryCircle.animateCornerRadius(from: 130, to: 140, duration: 1/2)
+            
+            
         })
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7/2, execute: {
+            guard !self.loaded else { return }
+            completion?()
+        })
     }
     
     func animateShrinkButton() {
+        //1
+        self.primaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(160)
+            make.center.equalTo(self.secondaryCircle)
+        }
         
+        UIView.animate(withDuration: 1/2) {
+            self.primaryCircle.layoutIfNeeded()
+            self.primaryCircle.backgroundColor = Colors.primaryGreenButton
+        }
+        primaryCircle.animateCornerRadius(from: 90, to: 80, duration: 1/2)
+
+        //2
+        secondaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(210)
+            make.center.equalTo(tertiaryCircle)
+        }
+        
+        UIView.animate(withDuration: 1/2, delay: 0.3/2) {
+            self.secondaryCircle.layoutIfNeeded()
+            self.secondaryCircle.backgroundColor = Colors.secondaryGreenButton
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3/2, execute: {
+            self.secondaryCircle.animateCornerRadius(from: 115, to: 105, duration: 1/2)
+        })
+        
+        //3
+        tertiaryCircle.snp.remakeConstraints { make in
+            make.width.height.equalTo(260)
+            make.center.equalTo(backgroundCircle)
+        }
+        UIView.animate(withDuration: 1/2, delay: 0.6/2) {
+            self.tertiaryCircle.layoutIfNeeded()
+            self.tertiaryCircle.backgroundColor = Colors.tertiaryGreenButton
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6/2, execute: {
+            self.tertiaryCircle.animateCornerRadius(from: 140, to: 130, duration: 1/2)
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7/2, execute: {
+        self.animateButton()
+        })
     }
-    
 }
 
 extension UIView

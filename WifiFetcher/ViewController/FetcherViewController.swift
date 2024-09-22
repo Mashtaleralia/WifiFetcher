@@ -39,7 +39,7 @@ class FetcherViewController: UIViewController {
         
         viewModel.fetchData { todos in
             DispatchQueue.main.async {
-                
+                self.button.loaded = true
                 self.showResultsPanel.resultsButton.isEnabled = true
             }
         }
