@@ -12,17 +12,6 @@ class TodosTableViewCell: UITableViewCell {
     static let identifier = "TodosTableViewCell"
     var viewModel: TodosTableViewCellViewModel?
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        guard let viewModel else {
-            print("kk")
-            return
-        }
-        backgroundColor = .black
-        thumbImageView.image = viewModel.thumbImage
-        completedMark.isHidden = !viewModel.isCompleted
-        uncompletedMark.isHidden = viewModel.isCompleted
-    }
-    
     private let thumbImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +87,12 @@ class TodosTableViewCell: UITableViewCell {
         self.viewModel = viewModel
     }
     
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        thumbImageView.image = nil
+//        completedMark.image = nil
+//        uncompletedMark.image = nil
+    }
     
 }
