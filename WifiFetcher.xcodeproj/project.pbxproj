@@ -24,6 +24,7 @@
 		840C4B2C2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2B2C9DF87C00A5F5F9 /* TodosViewControllerViewModel.swift */; };
 		840C4B2F2C9DFA9900A5F5F9 /* TodosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B2E2C9DFA9900A5F5F9 /* TodosTableViewCell.swift */; };
 		840C4B322C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C4B312C9E09BF00A5F5F9 /* TodosTableViewCellViewModel.swift */; };
+		840C4B3C2CA06CE000A5F5F9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 840C4B3B2CA06CE000A5F5F9 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840C4B3C2CA06CE000A5F5F9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,9 @@
 			dependencies = (
 			);
 			name = WifiFetcher;
+			packageProductDependencies = (
+				840C4B3B2CA06CE000A5F5F9 /* SnapKit */,
+			);
 			productName = WifiFetcher;
 			productReference = 840C4AFC2C9B34F700A5F5F9 /* WifiFetcher.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 840C4AF32C9B34F700A5F5F9;
+			packageReferences = (
+				840C4B3A2CA06CE000A5F5F9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 840C4AFD2C9B34F700A5F5F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -458,6 +466,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		840C4B3A2CA06CE000A5F5F9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		840C4B3B2CA06CE000A5F5F9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840C4B3A2CA06CE000A5F5F9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 840C4AF42C9B34F700A5F5F9 /* Project object */;
 }
