@@ -14,29 +14,32 @@ class FetcherViewController: UIViewController {
     private lazy var fetchingStatusView = FetchingSatusView(viewModel: viewModel.fetchingStatusViewModel, frame: .zero)
     
     let viewModel = FetcherViewControllerViewModel()
+
     
-    private let vanillaButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("COCK", for: .normal)
-        button.backgroundColor = .red
-        return button
-    }()
+    let button = FetchWifiButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.action = { [weak self] in
+            self?.didTapButton()
+        }
         view.addSubview(showResultsPanel)
-        view.addSubview(vanillaButton)
         view.addSubview(fetchingStatusView)
+        view.addSubview(button)
         addConstraints()
-        vanillaButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-       
+        
+        showResultsPanel.delegate = self
+
     }
     
-    @objc func didTapButton() {
-        viewModel.fetchData {
+    func didTapButton() {
+        
+        viewModel.fetchData { todos in
             DispatchQueue.main.async {
+                
                 self.showResultsPanel.resultsButton.isEnabled = true
             }
         }
@@ -58,10 +61,16 @@ class FetcherViewController: UIViewController {
             showResultsPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             showResultsPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             showResultsPanel.heightAnchor.constraint(equalToConstant: 68),
-            vanillaButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            vanillaButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            vanillaButton.heightAnchor.constraint(equalToConstant: 80),
-            vanillaButton.widthAnchor.constraint(equalToConstant: 80),
+//            vanillaButton.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+//            vanillaButton.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+//            vanillaButton.heightAnchor.constraint(equalToConstant: 80),
+//            vanillaButton.widthAnchor.constraint(equalToConstant: 80),
+            
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.heightAnchor.constraint(equalToConstant: 320),
+            button.widthAnchor.constraint(equalToConstant: 320),
+            
             
             fetchingStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             fetchingStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
