@@ -9,6 +9,15 @@ import UIKit
 
 final class TodosViewController: UIViewController {
     
+    private let doneButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Done", for: .normal)
+        button.backgroundColor = Colors.lightGreen
+        button.layer.cornerRadius = 24
+        return button
+    }()
+    
     private lazy var statusView: FetchingSatusView = {
         let viewModel = FetchingStatusViewViewModel()
         let view = FetchingSatusView(viewModel: viewModel, frame: .zero)
@@ -59,7 +68,11 @@ final class TodosViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: statusView.bottomAnchor, constant: 20),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            doneButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 
