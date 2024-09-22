@@ -92,10 +92,24 @@ extension TodosViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch viewModel.sections[section] {
         case .completed:
-            print(viewModel.completedToDoViewModels.count)
             return viewModel.completedToDoViewModels.count
         case .notCompleted:
             return viewModel.notCompletedToDoViewModels.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch viewModel.sections[indexPath.section] {
+        case .completed:
+            let cell = tableView.cellForRow(at: indexPath) as! TodosTableViewCell
+            let vm = viewModel.completedToDoViewModels[indexPath.row]
+            vm.isCompleted = false
+            cell.configure(with: vm)
+        case .notCompleted:
+            let cell = tableView.cellForRow(at: indexPath) as! TodosTableViewCell
+            let vm = viewModel.completedToDoViewModels[indexPath.row]
+            vm.isCompleted = true
+            cell.configure(with: vm)
         }
     }
 }
