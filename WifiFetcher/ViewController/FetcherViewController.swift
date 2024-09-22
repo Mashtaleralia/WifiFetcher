@@ -68,10 +68,19 @@ class FetcherViewController: UIViewController {
             fetchingStatusView.heightAnchor.constraint(equalToConstant: 68),
             fetchingStatusView.bottomAnchor.constraint(equalTo: showResultsPanel.topAnchor, constant: -25)
         ])
-        
-        
     }
+}
 
-
+extension FetcherViewController: ShowResultsPanelViewDelegate {
+    func showResults() {
+        print(viewModel.todos)
+        let toDoVM = TodosViewControllerViewModel(todos: viewModel.todos)
+        
+        let vc = TodosViewController(viewModel: toDoVM)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
