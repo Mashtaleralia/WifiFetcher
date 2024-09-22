@@ -12,6 +12,10 @@ final class TodosTableViewCell: UITableViewCell {
     static let identifier = "TodosTableViewCell"
     var viewModel: TodosTableViewCellViewModel?
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        backgroundColor = .black
+    }
+    
     private let thumbImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
